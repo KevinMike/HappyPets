@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Login | HappyPets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<!--     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+     <div class="page-signin">
+        <div class="signin-header">
+            <div class="container text-center">
+            <section class="logo">
+            <img class="img-logo img-circle" src="img/vet.png" alt="Logo de la empresa">
+                <a href="#/" >HappyPets</a>
+            </section>
+        </div>
+        </div>
+        <div class="signin-body">
+            <div class="container">
+            <h2 class="size-h2 login-title text-center">Iniciar sesión</h2>
+            <div class="form-container">
+                <form class="form-horizontal ng-pristine ng-valid">
+                    <fieldset>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-lock"></span>
+                                </span>
+                                <input type="password" class="form-control" placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        </div>
+                        <div class="form-group">
+                            <a href="#/" class="btn btn-primary btn-lg btn-block">Ingresar</a>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <section>
+                    <p class="text-center"><a href="javascript:;">Olvidaste tu contraseña?</a></p>
+                </section>
+
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

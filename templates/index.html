@@ -1,0 +1,195 @@
+﻿
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>HappyPets</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<!--     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+    <header id="header" class="">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <!--                     <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#navbar-menu"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button> -->
+                    <a class="toggle-menu" href="#">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <div class="navbar-brand" href="#">
+                        <a href="#">HappyPets</a>
+                    </div>
+                    <div class="menu-button" >
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </div>
+                </div>
+
+                <div class="top-nav">
+
+                    <ul class="nav-right pull-right list-unstyled profile">
+                        <li class="dropdown text-normal nav-profile" dropdown="">
+                            <a href="#" class="dropdown-toggle" dropdown-toggle="">
+                                <span class="hidden-xs">
+
+                                    <span > Bienvenido <strong>Alonso</strong> </span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu with-arrow pull-right">
+                                <li>
+                                    <a href="#/page/signin">
+                                        <i class="fa fa-sign-out"></i>
+                                        <span >Cerrar sesion</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <aside id="nav-container">
+        <div id="nav-wrapper" >
+            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+                <ul id="nav" data-collapse-nav="" data-slim-scroll="" data-highlight-active="" style="overflow: hidden; width: auto; height: 100%;">
+                    <li class="active">
+                        <a href="#/dashboard">
+                            <i class="fa fa-dashboard">
+                                <span class="icon-bg bg-danger"></span>
+                            </i>
+                            <span >Inicio</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/ui">
+                            <i class="fa fa-magic">
+                                <span class="icon-bg bg-orange"></span>
+                            </i>
+                            <span >Mascotas</span>
+                        </a>
+                        <ul class="subnav">
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span >Nueva Atencion</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span >Historia Clinica</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span >Nueva vacuna</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span >Tarjeta de Vacunas</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span >Lista de Mascotas</span></a></li>
+                        </ul>
+                        <i class="fa fa-caret-right icon-has-ul"></i>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-table"><span class="icon-bg bg-warning"></span></i><span>Clientes</span></a>
+                        <ul class="subnav">
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span>Nuevo cliente</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span>Lista de Clientes</span></a></li>
+                        </ul>
+                        <i class="fa fa-caret-right icon-has-ul"></i>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-pencil"><span class="icon-bg bg-success"></span></i><span>Productos</span></a>
+                        <ul class="subnav" >
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span>Nuevo producto</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i><span>Lista de productos</span></a></li>
+                        </ul>
+                        <i class="fa fa-caret-right icon-has-ul"></i>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-bar-chart-o"><span class="icon-bg bg-primary-light"></span></i><span>Servicios</span></a>
+                        <ul class="subnav">
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Nuevo servicio (empresa) </a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Lista servicios (empresa) </a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Registrar servicio-cliente</a></li>
+                            <li><a href="#"><i class="fa fa-caret-right"></i>Lista servicios brindados</a></li>
+                        </ul>
+                        <i class="fa fa-caret-right icon-has-ul"></i>
+                    </li>
+                </ul>
+                <div class="slimScrollBar"></div>
+                <div class="slimScrollRail"></div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="view-container">
+                <!-- ngView:  -->
+        <section  id="content" class="animate-fade-up ng-scope">
+            <div class="page page-dashboard ng-scope" data-ng-controller="DashboardCtrl">
+
+    <!-- stats -->
+            <div class="row">
+            <div class="col-lg-6 col-xsm-6">
+                <div class="panel mini-box">
+                    <span class="box-icon bg-success">
+                        <i class="fa fa-paw"></i>
+                    </span>
+                    <div class="box-info">
+                        <p class="size-h2">25 </p>
+                        <p class="text-muted"><span>Mascotas nuevas</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xsm-6">
+                <div class="panel mini-box">
+                    <span class="box-icon bg-info">
+                        <i class="fa fa-users"></i>
+                    </span>
+                    <div class="box-info">
+                        <p class="size-h2">112</p>
+                        <p class="text-muted"><span>Clientes nuevos</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xsm-6">
+                <div class="panel mini-box">
+                    <span class="box-icon bg-warning">
+                        <i class="fa fa-plus-square"></i>
+                    </span>
+                    <div class="box-info">
+                        <p class="size-h2">20</p>
+                        <p class="text-muted"><span>Atenciones realizadas</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-xsm-6">
+                <div class="panel mini-box">
+                    <span class="box-icon bg-danger">
+                        <i class="fa fa-smile-o"></i>
+                    </span>
+                    <div class="box-info">
+                        <p class="size-h2">10</p>
+                        <p class="text-muted"><span>Servicios brindados</span></p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </section>
+    </div>
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+
+
+</html>
