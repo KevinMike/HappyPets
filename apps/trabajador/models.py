@@ -8,7 +8,11 @@ class Trabajador(models.Model):
     telefono = models.CharField(max_length=20, blank=True, null=True)
     fecha_nacimiento = models.DateField(blank=True, null=True)
     fecha_contrato = models.DateField(blank=True, null=True)
-
+    def __unicode__(self):
+        return self.nombre + ' ' + self.apellido
+    class Meta:
+        verbose_name = 'Trabajador'
+        verbose_name_plural = 'Trabajadores'
 
 class Veterinario(models.Model):
     dni = models.CharField(primary_key=True, max_length=8)
@@ -18,3 +22,8 @@ class Veterinario(models.Model):
     fecha_nacimiento = models.DateField(blank=True, null=True)
     fecha_contrato = models.DateField(blank=True, null=True)
     especialidad = models.CharField(max_length=45)
+    def __unicode__(self):
+        return self.nombre + ' ' + self.apellido
+    class Meta:
+        verbose_name = 'Veterinario'
+        verbose_name_plural = 'Veterinarios'

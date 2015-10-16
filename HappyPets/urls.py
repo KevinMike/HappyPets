@@ -1,3 +1,4 @@
+# -*- encoding: utf-8 -*-
 """HappyPets URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,9 +16,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from material.frontend import urls as frontend_urls
+admin.site.site_header = "HappyPets"
+admin.site.site_title= "Sistema de Administración"
 
 urlpatterns = [
-    url(r'^admin/', include(admin.site.urls)),
+    #url(r'^admin/', include(admin.site.urls)),
+    url(r'', include(frontend_urls)),
+    url(r'^', include(admin.site.urls)),
     url(r'^$', 'apps.cliente.views.index'),
     url(r'^login/', include(admin.site.urls)),
 ]

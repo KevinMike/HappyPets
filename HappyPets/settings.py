@@ -32,15 +32,30 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'apps.cliente',
+    'apps.mascota',
+    'apps.atenciones',
+    'apps.servicios',
+    'apps.trabajador',
+    'apps.vacuna',
+    ####
+    'bootstrap_admin',
+    #'material',
+    #'material.frontend',
+    #'material.admin',
+    ###
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 )
 
 MIDDLEWARE_CLASSES = (
+    #'material.frontend.middleware.SmoothNavigationMiddleware',
+    ###
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,6 +76,14 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                ###
+                #'material.frontend.context_processors.modules',
+                ###
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -77,7 +100,7 @@ WSGI_APPLICATION = 'HappyPets.wsgi.application'
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-pe'
 
 TIME_ZONE = 'UTC'
 
@@ -101,5 +124,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 MEDIA_URL = '/media/'
 
+MATERIAL_ADMIN_SITE = 'mymodule.admin.admin_site'
 
 from HappyPets.settings_local.local import *
