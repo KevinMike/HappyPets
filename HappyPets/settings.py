@@ -38,12 +38,7 @@ INSTALLED_APPS = (
     'apps.servicios',
     'apps.trabajador',
     'apps.vacuna',
-    ####
     'bootstrap_admin',
-    #'material',
-    #'material.frontend',
-    #'material.admin',
-    ###
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'report_builder'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,13 +76,12 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
-                ###
-                #'material.frontend.context_processors.modules',
-                ###
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.media',
+                'django.core.context_processors.static',
             ],
         },
     },
@@ -115,6 +110,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = 'staticfiles'
 
 STATICFILES_DIRS = (
      os.path.join(BASE_DIR, "static"),
