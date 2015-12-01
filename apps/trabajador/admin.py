@@ -11,3 +11,4 @@ class TrabajadorAdmin(admin.ModelAdmin):
 class VeterinarioAdmin(admin.ModelAdmin):
     model = Veterinario
     list_display = ('dni','nombre','apellido','telefono','fecha_nacimiento','fecha_contrato','especialidad',)
+    list_filter = ('especialidad',)

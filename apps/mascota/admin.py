@@ -5,4 +5,5 @@ from .models import Mascota
 class MascotaAdmin(admin.ModelAdmin):
     model = Mascota
     list_display = ('nombre','cliente','tipo','raza','tipo_alimento','fecha_nacimiento',)
+    list_filter = ('cliente__nombre',)
 

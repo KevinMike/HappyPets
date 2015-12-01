@@ -41,6 +41,4 @@ class AtencionClinica_DetalleMedicina(models.Model):
     atencion_clinica = models.ForeignKey(AtencionClinica,on_delete=models.CASCADE)
     medicina = models.ForeignKey(Medicina,on_delete=models.CASCADE)
     dosis = models.CharField(max_length=15)
-    class Meta:
-        verbose_name = 'Composición'
-        verbose_name_plural = 'Medicamentos'
+
