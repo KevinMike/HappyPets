@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Trabajador(models.Model):
@@ -8,6 +9,7 @@ class Trabajador(models.Model):
     telefono = models.CharField(max_length=20, blank=True, null=True)
     fecha_nacimiento = models.DateField(blank=True, null=True)
     fecha_contrato = models.DateField(blank=True, null=True)
+    usuario = models.OneToOneField(User,unique=True)
     def __unicode__(self):
         return self.nombre + ' ' + self.apellido
     class Meta:
@@ -22,6 +24,7 @@ class Veterinario(models.Model):
     fecha_nacimiento = models.DateField(blank=True, null=True)
     fecha_contrato = models.DateField(blank=True, null=True)
     especialidad = models.CharField(max_length=45)
+    usuario = models.OneToOneField(User,unique=True)
     def __unicode__(self):
         return self.nombre + ' ' + self.apellido
     class Meta:
