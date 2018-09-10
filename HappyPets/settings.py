@@ -120,6 +120,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 MEDIA_URL = '/media/'
 
-MATERIAL_ADMIN_SITE = 'mymodule.admin.admin_site'
-
 from HappyPets.settings_local.local import *

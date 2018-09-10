@@ -24,7 +24,7 @@ admin.site.site_title= "Sistema de Administración"
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     #url(r'^', include(admin.site.urls)),
-    #url(r'^$', 'apps.cliente.views.index'),
+    url(r'^$', 'apps.cliente.views.index'),
     #url(r'^login/', include(admin.site.urls)),
     url(r'^report_builder/', include('report_builder.urls'))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

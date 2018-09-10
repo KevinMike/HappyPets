@@ -19,8 +19,8 @@ class AtencionClinicaAdmin(admin.ModelAdmin):
 
 class CitaAdmin(admin.ModelAdmin):
     model = Cita
-    list_display = ('fecha','veterinario','mascota')
-    list_filter = ('fecha','veterinario__nombre','mascota__nombre')
+    list_display = ('fecha','veterinario','mascota','atendido',)
+    list_filter = ('fecha','veterinario__nombre','mascota__nombre','atendido',)
 
 admin.site.register(AtencionClinica,AtencionClinicaAdmin)
 admin.site.register(Cita,CitaAdmin)

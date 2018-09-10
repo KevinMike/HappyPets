@@ -20,8 +20,8 @@ class AtencionClinica(models.Model):
     fecha = models.DateField(default=timezone.now())
     diagnostico = models.TextField()
     proxima_cita = models.ForeignKey(Cita,blank=True, null=True)
-    medicinas = models.ManyToManyField(Medicina,blank=True,null=True)
-    productos = models.ManyToManyField(Producto,blank=True,null=True)
+    #medicinas = models.ManyToManyField(Medicina,blank=True,null=True)
+    #productos = models.ManyToManyField(Producto,blank=True,null=True)
     observaciones = models.TextField(blank=True, null=True)
     def __unicode__(self):
         return "%s - %s" %(self.fecha,self.mascota.nombre)
